@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="rtandroid.sample"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="25"
+        android:targetSdkVersion="25" />
+
+    <uses-permission android:name="rtandroid.permission.USE_RT_CPU"/>
+    <uses-permission android:name="rtandroid.permission.USE_RT_PROCESSES"/>
+    <uses-permission android:name="rtandroid.permission.USE_ROOT"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <uses-library android:name="rtandroid.sdk"/>
+        <meta-data android:name="realtime" android:value="true" />
+
+        <activity
+        android:name=".SampleActivity"
+        android:label="@string/app_name" >
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
