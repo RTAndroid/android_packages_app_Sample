@@ -9,13 +9,15 @@
 *.class
 
 # Generated files
+build/
 bin/
 gen/
 out/
 
 # Gradle files
 .gradle/
-build/
+gradle/
+gradlew*
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -34,7 +36,7 @@ captures/
 
 # Intellij
 *.iml
-.idea/workspace.xml
+.idea/
 
 # Keystore files
 *.jks
