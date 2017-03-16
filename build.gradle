@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.android.tools.build:gradle:2.3.0'
     }
 }
 
@@ -13,14 +13,9 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
-
 apply plugin: 'com.android.application'
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
     provided fileTree(include: 'rtandroid-20170126.jar', dir: 'api')
 }
 
@@ -34,7 +29,7 @@ android {
             aidl.srcDirs = ['src']
             assets.srcDirs = ['assets']
             java.srcDirs = ['src']
-            jni.srcDirs = []
+            jni.srcDirs = ['cpp']
             jniLibs.srcDirs = ['jniLibs']
             renderscript.srcDirs = ['src']
             resources.srcDirs = ['src']
@@ -49,5 +44,11 @@ android {
         // by a similar customization.
         debug.setRoot('build/debug')
         release.setRoot('build/release')
+    }
+
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
+        }
     }
 }

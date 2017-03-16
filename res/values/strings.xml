@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">RTAndroid Sample</string>
-    <string name="app_desc">This activity starts a real-time thread. Check out the Logcat for more info.</string>
+
+    <string name="thread_rt_toast">Real-time thread started. Check out the Logcat for more info.</string>
+    <string name="serial_rt_toast">Serial thread started. Check out the Logcat for more info.</string>
 
 </resources>
