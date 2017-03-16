@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
+import rtandroid.sample.serial.SampleSerialThread;
 import rtandroid.thread.ExecutionParameters;
 import rtandroid.thread.SchedulingPolicy;
 
@@ -31,15 +31,11 @@ public class SampleActivity extends Activity
 
         SampleRealtimeThread thread = new SampleRealtimeThread(params);
         thread.start();
-
-        Toast.makeText(this, R.string.thread_rt_toast, Toast.LENGTH_SHORT).show();
     }
 
     public void onStartSerialThread(View view)
     {
         SampleSerialThread thread = new SampleSerialThread();
         thread.start();
-
-        Toast.makeText(this, R.string.thread_rt_toast, Toast.LENGTH_SHORT).show();
     }
 }
